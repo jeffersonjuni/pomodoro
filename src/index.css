@@ -1,13 +1,125 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: #243140;
+  transition: background-color 300ms ease-in-out;
+  line-height: 1.5;
+  padding: 10px;
+}
+
+.container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.working {
+  background:#e94f37;
+}
+
+.hidden {
+  display: none;
+}
+
+.pomodoro {
+  background: #ffffff;
+  color: #2e3b4e;
+  margin: 50px 20px;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease;
+}
+
+.pomodoro:hover {
+  transform: translateY(-3px);
+}
+
+.pomodoro h2 {
+  font-size: 1.8rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.pomodoro .timer {
+  font-size: 5rem;
+  text-align: center;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.pomodoro .controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.pomodoro button {
+  background: #41b3e1;
+  border: none;
+  cursor: pointer;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+.pomodoro button:hover {
+  background: #369dc4;
+  transform: scale(1.05);
+}
+
+.working .pomodoro button {
+  background: #e94f37;
+}
+
+.working .pomodoro button:hover {
+  background: #d7422e;
+}
+
+.pomodoro .details {
+  margin: 20px 0;
+  font-size: 0.95rem;
+  text-align: center;
+  color: #555;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .pomodoro {
+    margin: 30px 10px;
+    padding: 20px;
+  }
+
+  .pomodoro .timer {
+    font-size: 4rem;
+  }
+
+  .pomodoro button {
+    width: 100%;
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pomodoro {
+    padding: 15px;
+  }
+
+  .pomodoro .timer {
+    font-size: 3rem;
+  }
+
+  .pomodoro h2 {
+    font-size: 1.5rem;
+  }
 }
